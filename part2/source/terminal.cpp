@@ -13,6 +13,7 @@ u16 Terminal::curr_tile_num = 0;
 u16 Terminal::text_sbb = 0;
 u16 Terminal::text_cbb = 0;
 u8 Terminal::bg_ind = 0;
+bool Terminal::need_new_line = true;
 
 //now i can use ind to access certain registers
 vu16* BG_VOFS[4] = {
@@ -91,10 +92,10 @@ void Terminal::move_one_line(){
     curr_line_num = (curr_line_num+1) % 32;
 
     //erase current top line of text
-    memset16(&se_mem[text_sbb][((curr_line_num+12+1)%32)*32], 0, 32);
+    memset16(&se_mem[text_sbb][((curr_line_num+12+2)%32)*32], 0, 32);
 
     //update bg ofs
-    *(BG_VOFS[bg_ind]) = TERMINAL_VOFS + ((curr_line_num+1)*8);
+    *(BG_VOFS[bg_ind]) = TERMINAL_VOFS + ((curr_line_num+2)*8);
 
     //reset tile num
     curr_tile_num = 0;

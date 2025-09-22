@@ -10,17 +10,28 @@ class Terminal{
         static void reset();
 
         static void log(const char* word){
+            if(need_new_line){
+                move_one_line();
+                need_new_line = false;
+            }
+
             while(*word != '\0'){
                 //draw next char
                 drawVal(*word);
                 word++;
+                vid_vsync();
             }
-            move_one_line();
+            need_new_line = true;
         };
 
 
         template <typename T, typename... Args>
         static void log(const char* word, T val, Args... args){
+            if(need_new_line){
+                move_one_line();
+                need_new_line = false;
+            }
+
             while(*word != '\0'){
 
                 //'%%' will be used to display a char or int
@@ -37,8 +48,9 @@ class Terminal{
                     drawVal(*word);
                     word++; 
                 }
+                vid_vsync();
             }
-            move_one_line();
+            need_new_line = true;
         };
 
 
@@ -49,6 +61,7 @@ class Terminal{
         
         static u16 curr_line_num;
         static u16 curr_tile_num;
+        static bool need_new_line;
 
         //For DCNT_BG$(0-3)
         static u8 bg_ind;
