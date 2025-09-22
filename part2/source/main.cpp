@@ -38,7 +38,7 @@ int main(){
         }
 
         if(key_hit(KEY_B)){
-            Terminal::log("This is message is to show how text overflows");
+            Terminal::log("This message is to show how text overflows when it is too long");
         }
 
         if(key_hit(KEY_START)){

@@ -77,7 +77,7 @@ void Terminal::drawVal(int val){
 void Terminal::drawVal(char c){
     //if new tile will overflow onto next line, move to next line
     if(curr_tile_num == TERMINAL_TEXT_WIDTH){
-        move_one_line();
+        advanceOneLine();
     }
 
     u16 se_ind = (curr_line_num * 32) + curr_tile_num + 1;// + 1 to skip left border
@@ -87,7 +87,7 @@ void Terminal::drawVal(char c){
     curr_tile_num++;
 }
 
-void Terminal::move_one_line(){
+void Terminal::advanceOneLine(){
     //update line num
     curr_line_num = (curr_line_num+1) % 32;
 

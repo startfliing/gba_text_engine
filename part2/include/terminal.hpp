@@ -11,7 +11,7 @@ class Terminal{
 
         static void log(const char* word){
             if(need_new_line){
-                move_one_line();
+                advanceOneLine();
                 need_new_line = false;
             }
 
@@ -28,7 +28,7 @@ class Terminal{
         template <typename T, typename... Args>
         static void log(const char* word, T val, Args... args){
             if(need_new_line){
-                move_one_line();
+                advanceOneLine();
                 need_new_line = false;
             }
 
@@ -57,7 +57,7 @@ class Terminal{
     private:
         static void drawVal(int val);
         static void drawVal(char c);
-        static void move_one_line();
+        static void advanceOneLine();
         
         static u16 curr_line_num;
         static u16 curr_tile_num;
