@@ -25,7 +25,7 @@ int main(){
 
     
     //Setup is done. Lets put it into action!
-    Terminal::log("Terminal initiated");
+    Terminal::log("Hello World!");
 
     while(1){
 
