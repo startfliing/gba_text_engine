@@ -2,6 +2,8 @@
 
 #include "text.h"
 
+#define IS_TEXT_SCROLL_ENABLED true
+
 #define TERMINAL_TEXT_WIDTH 28
 #define TERMINAL_TEXT_HEIGHT 18
 
@@ -82,6 +84,8 @@ void Terminal::drawVal(char c){
 
     u16 se_ind = (curr_line_num * 32) + curr_tile_num + 1;// + 1 to skip left border
     se_mem[text_sbb][se_ind] = charToTileInd(c);
+
+    if(IS_TEXT_SCROLL_ENABLED) vid_vsync();
 
     //update new tiles
     curr_tile_num++;

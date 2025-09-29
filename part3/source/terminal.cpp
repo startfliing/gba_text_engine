@@ -3,6 +3,8 @@
 #include "text.h"
 #include "textWidths.hpp"
 
+#define IS_TEXT_SCROLL_ENABLED false
+
 #define TERMINAL_TEXT_WIDTH 28
 #define TERMINAL_TEXT_HEIGHT 18
 
@@ -81,7 +83,7 @@ void Terminal::loadTile(char c, int vram_tile_ind){
     }
 
     //adds the scroll effect
-    vid_vsync();
+    if(IS_TEXT_SCROLL_ENABLED) vid_vsync();
 }
 
 //cool use of recursion and function overloading

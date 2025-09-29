@@ -19,7 +19,6 @@ class Terminal{
                 //draw next char
                 drawVal(*word);
                 word++;
-                vid_vsync();
             }
             need_new_line = true;
         };
@@ -48,7 +47,6 @@ class Terminal{
                     drawVal(*word);
                     word++; 
                 }
-                vid_vsync();
             }
             need_new_line = true;
         };
