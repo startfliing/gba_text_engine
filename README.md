@@ -2,6 +2,8 @@
 
 Collection of three incremental GBA text-display examples (parts 1, 2, and 3) in C++. Each part is a small project with its own Makefile and sources demonstrating increasingly advanced text rendering techniques on the Game Boy Advance.
 
+[My Youtube Channel](https://www.youtube.com/@StartFliing)
+
 ## GBA Resources
 Here are some resources I used/am using to learn about the GBA
 - [devkitPro](https://devkitpro.org/)
