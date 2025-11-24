@@ -55,6 +55,7 @@ class Terminal{
     private:
         static void drawVal(int val);
         static void drawVal(char c);
+        static void drawVal(const char* string);
         static void advanceOneLine();
         
         static u16 curr_line_num;

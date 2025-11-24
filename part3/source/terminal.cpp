@@ -120,6 +120,13 @@ void Terminal::drawVal(char c){
     loadTile(c, vram_tile_ind);
 }
 
+void Terminal::drawVal(const char* string){
+    //draw string by drawing each character
+    while(*string != '\0'){
+        drawVal(*string++);
+    }
+}
+
 //clear a row right before writing on it
 void Terminal::clearTopRow(){
     TILE blank = text_font.getTile(0);

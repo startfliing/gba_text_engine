@@ -56,6 +56,7 @@ class Terminal{
         static void loadTile(char c, int vram_tile_ind);
         static void drawVal(int val);
         static void drawVal(char c);
+        static void drawVal(const char* string);
         static void clearTopRow();
         static void updateScreen();
         static void advanceOneLine();

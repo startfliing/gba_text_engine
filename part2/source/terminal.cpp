@@ -91,6 +91,13 @@ void Terminal::drawVal(char c){
     curr_tile_num++;
 }
 
+void Terminal::drawVal(const char* string){
+    //draw string by drawing each character
+    while(*string != '\0'){
+        drawVal(*string++);
+    }
+}
+
 void Terminal::advanceOneLine(){
     //update line num
     curr_line_num = (curr_line_num+1) % 32;
